@@ -1,0 +1,2 @@
+openai-whisper
+mediapipe==0.10.32

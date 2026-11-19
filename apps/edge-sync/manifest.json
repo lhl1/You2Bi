@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "You2Bi · YouTube 登录同步",
+  "version": "1.0.1",
+  "description": "将当前 Edge 配置中的 YouTube 登录状态同步到本机 You2Bi。",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0mK3jth6rUQ/WoVnQJe/9FK4dPFNDOmlZcGQ8YJtZA5O82L4kDqhP8LrAq2MHeFSisxrd8C6246cFcuP4lHRm42H8Ib031Yob8KdipeRfX6YqRmetd1MiLc2ja05tWUsKL3IhSl03wCRHLcMpNzgENnAYhM8QNWypi+Nm+q3ZNz1O9/r+ZxDH8AS4ID2uDtEspjRHbQ+SwaqFRyPEbZHEogWEBVY/8kjw7Xgb9mmys+OU7m8zqcthgIn5q4NOTobIyYFK3jRby9wW6UQm6uo9id8OJ79KyV4n7oXQHr3lQ1A1OWmXO05Rs+POnuu4lspHZA/+fLidhQtlImV/g1F9QIDAQAB",
+  "permissions": ["cookies", "nativeMessaging", "alarms", "storage"],
+  "host_permissions": ["https://www.youtube.com/*", "https://youtube.com/*"],
+  "background": {"service_worker": "sync.js"},
+  "icons": {"128": "you2bi-icon.png"},
+  "action": {"default_icon": "you2bi-icon.png", "default_title": "You2Bi：点击启用或暂停 YouTube 登录同步"}
+}

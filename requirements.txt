@@ -1,0 +1,9 @@
+# Complete developer installation. Desktop setup installs only selected groups.
+-r backend/requirements/base.txt
+-r backend/requirements/media.txt
+-r backend/requirements/download.txt
+-r backend/requirements/whisper.txt
+-r backend/requirements/voxcpm.txt
+-r backend/requirements/demucs.txt
+-r backend/requirements/qwen_forced_aligner.txt
+pytest
