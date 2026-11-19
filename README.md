@@ -32,7 +32,7 @@
 ~~~text
 You2Bi-Windows-x64/
   启动 You2Bi.cmd
-  启动.ps1
+  launch.ps1
   app/                 桌面程序
   data/youdub/
     runtime/           Python、依赖和 FFmpeg

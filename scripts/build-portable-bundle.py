@@ -19,8 +19,8 @@ for name in ('models','nltk_data'):
         shutil.copytree(source/name,bundle/'data/youdub'/name,dirs_exist_ok=True,ignore=ignore)
 for name in ('README.md','LICENSE'):
     shutil.copyfile(root/name,bundle/name)
-shutil.copyfile(root/'scripts/portable-launch.ps1',bundle/'启动.ps1')
-(bundle/'启动 You2Bi.cmd').write_text('@echo off\r\npowershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0启动.ps1"\r\nif errorlevel 1 pause\r\n',encoding='gbk')
+shutil.copyfile(root/'scripts/portable-launch.ps1',bundle/'launch.ps1')
+(bundle/'启动 You2Bi.cmd').write_text('@echo off\r\npowershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0launch.ps1"\r\nif errorlevel 1 pause\r\n',encoding='gbk')
 print('Copied runtime and models',flush=True)
 # Rewrite relocated runtime files now as well as on each user launch.
 base=bundle/'data/youdub/runtime/python/python'
@@ -37,7 +37,7 @@ subprocess.run([str(nano),'-B','-c','import torch,triton,flash_attn;from nanovll
 files=list(bundle.rglob('*'))
 total=sum(p.stat().st_size for p in files if p.is_file())
 print(json.dumps({'files':len(files),'bytes':total}),flush=True)
-archive=bundle.with_suffix('.zip')
+archive=bundle.parent / (bundle.name + '.zip')
 with zipfile.ZipFile(archive,'w',compression=zipfile.ZIP_STORED,allowZip64=True) as z:
     for p in files:
         if p.is_file():
